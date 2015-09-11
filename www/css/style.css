@@ -1,0 +1,59 @@
+.tabs .tab-item .icon.run {
+ background-repeat: no-repeat;
+ background-position:50%;
+ background-image: url('../img/run-trans.png');
+ background-size:contain;
+}
+.tab-item{
+
+}
+map {
+  width: 100%;
+  height: 100% !important;
+}
+
+.scroll, .mapWrap {
+  height: 100%;
+}
+
+body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
+
+
+
+#social-links {
+    text-align: center;
+}
+
+#social-links ul li {
+    width: 250px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+#social-links ul li span.ifacebook{
+    display: inline-table;
+    width: 41px;
+    text-align: center;
+}
+#social-links ul li span.ifacebook { background: #354f88; padding: 10px 0 10px 0; }
+
+#social-links ul li a.afacebook {
+    display: inline-table;
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0;
+    width: 200px;
+    text-align: center;
+}
+#social-links ul li a.afacebook { background: #3b5998; padding: 15px 0 10px 0; }
+
+#social-links ul li a.afacebook:active { background: #354f88; }
+
+
+.login-btns {
+    width: 250px;
+    margin: 0 auto 0 auto;
+}

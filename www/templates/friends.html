@@ -1,0 +1,26 @@
+<ion-view view-title="Find Running Mate">
+    <ion-content scroll="false">
+        <div class="login-btns" ng-hide="loggedIn" >
+            <div id="social-links">
+                <ul>
+                    <li ng-click="fbLogin()"><span class="ifacebook"><img src="img/facebook.png"></span><a href="#" class="afacebook">sign in with facebook</a></li>
+                </ul>
+            </div>
+            <hr id="login-divider" />
+        </div>
+        <div ng-show="loggedIn">
+
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="friend in friends" type="item-text-wrap" ui-sref="tab.dash-friend({'friendId': friend.id})">
+              <img ng-src="{{friend.face}}">
+              <h2>{{friend.name}}</h2>
+              <p>{{friend.position}}</p>
+              <i class="icon ion-pinpoint icon-accessory"></i>
+
+              <ion-option-button class="button-assertive" ng-click="remove(friend)">
+                Delete
+              </ion-option-button>
+            </ion-item>
+
+        </div>
+  </ion-content>
+</ion-view>
