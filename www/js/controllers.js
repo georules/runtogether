@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ngOpenFB'])
 
 .controller('DashCtrl', function($scope, $ionicLoading, Friends, $stateParams) {
 
@@ -60,12 +60,32 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('ChatsCtrl', function($scope, Friends, $location) {
+.controller('ChatsCtrl', function($scope, Friends, $location, ngFB) {
   console.log("friends")
 
   $scope.fbLogin = function () {
       Friends.loggedIn = true;
       $scope.loggedIn = true;
+      ngFB.login({scope: 'email'}).then(
+        function (response) {
+            if (response.status === 'connected') {
+                console.log('Facebook login succeeded');
+                console.log(response)
+            } else {
+                alert('Facebook login failed');
+            }
+        });
+    };
+
+    $scope.loadFriends = function() {
+
+      FB.api('/me/friends', function(response) {
+        $scope.$apply(function() {
+          $scope.myFriends = response.data;
+          console.log($scope.myFriends);
+        });
+
+      });
     };
 
   $scope.friends = Friends.all();
